@@ -11,7 +11,9 @@ const startServer = async () => {
   // Middleware
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(cors());
+  app.use(cors({
+    origin: ["http://localhost:3000/","https://user_register.onrender.com"],
+  }));
 
   // Connecting to MongoDB
   try {
